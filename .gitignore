@@ -1,0 +1,55 @@
+# Python / VS Code
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials / environment
+.env
+.env.*
+!.env.example
+kaggle.json
+*.pem
+*.key
+
+# Datasets and generated labels: NEVER push to GitHub
+/data/raw/
+/data/processed/
+/data/cache/
+/data/tmp/
+/data/downloads/
+
+# Model weights, generated runs and profiler traces
+/runs/
+/models/checkpoints/
+/models/weights/
+/weights/
+/outputs/
+/logs/
+/wandb/
+/mlruns/
+/tensorboard/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.tflite
+*.safetensors
+
+# Temporary notebook artifacts
+*.nbconvert.ipynb
+.DS_Store
+Thumbs.db
+
+# Keep: code, notebooks with cleared outputs, configs, docs,
+# data/manifests, small reviewed metric CSVs and report figures.
+
+# Host-specific private train config
+configs/*.local.yaml

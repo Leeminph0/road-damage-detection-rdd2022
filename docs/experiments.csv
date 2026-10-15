@@ -1,0 +1,1 @@
+run_id,task,model,git_commit,data_manifest_sha256,seed,imgsz,epochs,batch,optimizer,validation_map50,validation_map5095,test_map5095_final_only,params_m,gflops,latency_ms_batch1,artifact_ref,notes

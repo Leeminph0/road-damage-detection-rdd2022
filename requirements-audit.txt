@@ -1,0 +1,7 @@
+# Only the audit environment; model training dependencies are defined later per validated author setup.
+numpy
+pandas
+pillow
+matplotlib
+tqdm
+ipykernel

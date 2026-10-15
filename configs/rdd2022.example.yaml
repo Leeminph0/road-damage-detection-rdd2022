@@ -1,0 +1,12 @@
+# Example only! Do not train until labeled split is verified and processed.
+# Create a local configs/rdd2022.local.yaml (ignored) with an actual absolute path if needed.
+path: data/processed
+train: images/train
+val: images/val
+test: images/test
+nc: 4
+names:
+  0: D00
+  1: D10
+  2: D20
+  3: D40
