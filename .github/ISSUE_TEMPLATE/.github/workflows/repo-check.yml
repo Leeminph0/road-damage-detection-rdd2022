@@ -1,0 +1,45 @@
+
+name: Research Repository Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check repository structure
+        run: python scripts/check_repo.py
+
+      - name: Verify Python syntax
+        run: python -m compileall -q scripts
+
+      - name: Verify notebook JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for path in Path("notebooks").rglob("*.ipynb"):
+              with path.open(encoding="utf-8") as f:
+                  notebook = json.load(f)
+
+              assert notebook.get("nbformat") == 4
+              assert isinstance(notebook.get("cells"), list)
+              print("VALID:", path)
+          PY
