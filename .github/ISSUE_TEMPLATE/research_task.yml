@@ -1,0 +1,74 @@
+
+name: Research Task
+description: Create and track a reproducible RDD2022 research task
+title: "[TASK] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Research Track C: RDD2022.
+        Use docs/TASKLIST.md as the task reference.
+        Provide evidence before marking a task complete.
+
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: Use the ID from docs/TASKLIST.md
+      placeholder: "T03"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Research Phase
+      options:
+        - P0 - Dataset and Protocol
+        - P1 - Baseline Experiments
+        - P2 - Module Reimplementation
+        - P3 - Proposed Method
+        - P4 - Evaluation and Ablation
+        - P5 - Paper and Release
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Research Objective
+      placeholder: Explain what this task should achieve.
+    validations:
+      required: true
+
+  - type: textarea
+    id: methodology
+    attributes:
+      label: Methodology
+      description: Describe methods, data, and validation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Expected Deliverables
+      placeholder: List files, tables, metrics, or reports.
+    validations:
+      required: true
+
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance Criteria
+      placeholder: Define how correctness will be verified.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Results and Evidence
+      description: Update this field as work progresses.
+    validations:
+      required: false
